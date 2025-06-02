@@ -37,10 +37,10 @@ class KnapsackProblemTest {
         items.add(new Item(1, 1,10));
         items.add(new Item(2, 2,10));
         items.add(new Item(3, 3,10));
-        Problem problem = new Problem(10, 1, 1, 10);
+        Problem problem = new Problem(items);
         Result result = problem.solve(1);
         Map<Item, Integer> itemCounts = result.getItemCounts();
-        assertFalse(itemCounts.isEmpty());
+        assertTrue(itemCounts.isEmpty());
     }
 
     @Test
@@ -60,7 +60,7 @@ class KnapsackProblemTest {
     @Test
     public void testExampleInstance(){
         List<Item> items = new ArrayList<>();
-        items.add(new Item(1, 6,3));
+        items.add(new Item(1, 6,6));
         items.add(new Item(2, 2,2));
         Problem problem = new Problem(items);
         Result result = problem.solve(20);
@@ -70,7 +70,7 @@ class KnapsackProblemTest {
         expectedItemCounts.put(items.get(1), 1); // 1 sztuka przedmiotu 2 (2 wagi)
 
         int expectedWeight = 20;
-        int expectedValue = 11;
+        int expectedValue = 20;
         assertEquals(expectedItemCounts, result.getItemCounts());
         assertEquals(expectedValue, result.getTotalValue());
         assertEquals(expectedWeight, result.getTotalWeight());
