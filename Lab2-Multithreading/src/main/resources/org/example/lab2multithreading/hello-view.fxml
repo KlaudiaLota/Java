@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.lab2multithreading.HelloController"
+            style="-fx-background-color: linear-gradient(to bottom right, #e3f2fd, #ffffff);">
+
+    <!-- Górny pasek: logo + tytuł -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 15; -fx-background-color: #bbdefb;">
+            <ImageView fx:id="logoImageView" fitHeight="50" preserveRatio="true"
+                       style="-fx-effect: dropshadow(gaussian, #90caf9, 10, 0.3, 0, 0);"/>
+            <Label text="JavaFX Edytor Obrazów"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #0d47a1;"/>
+        </HBox>
+    </top>
+
+    <!-- Lewy panel: przyciski i operacje -->
+    <left>
+        <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #e3f2fd;">
+            <Button text="📂 Wczytaj obraz" onAction="#onLoadImage" styleClass="fancy-button"/>
+            <Button text="🔍 Skaluj obraz" onAction="#onScaleImage" fx:id="scaleButton" disable="true" styleClass="fancy-button"/>
+            <Button text="💾 Zapisz obraz" onAction="#onSaveImage" fx:id="saveButton" disable="true" styleClass="fancy-button"/>
+            <Button fx:id="rotateLeftButton" text="↺ Obróć w lewo" onAction="#onRotateLeft" disable="true" styleClass="fancy-button"/>
+            <Button fx:id="rotateRightButton" text="↻ Obróć w prawo" onAction="#onRotateRight" disable="true" styleClass="fancy-button"/>
+            <Separator/>
+            <Label text="Operacje" style="-fx-font-weight: bold; -fx-text-fill: #1976d2;"/>
+            <ComboBox fx:id="operationComboBox" promptText="🛠 Wybierz operację"
+                      style="-fx-pref-width: 160; -fx-background-radius: 5;"/>
+            <Button text="✅ Wykonaj" onAction="#onApplyOperation" styleClass="fancy-button"/>
+        </VBox>
+    </left>
+
+    <!-- Centrum: obrazki -->
+    <center>
+        <HBox spacing="20" alignment="CENTER" style="-fx-padding: 20;">
+            <ImageView fx:id="originalImageView" fitWidth="300" preserveRatio="true"
+                       style="-fx-border-color: #64b5f6; -fx-border-width: 2; -fx-effect: dropshadow(gaussian, gray, 5, 0.5, 0, 0);"/>
+            <ImageView fx:id="processedImageView" fitWidth="300" preserveRatio="true"
+                       style="-fx-border-color: #64b5f6; -fx-border-width: 2; -fx-effect: dropshadow(gaussian, gray, 5, 0.5, 0, 0);"/>
+        </HBox>
+    </center>
+
+    <!-- Stopka: autor -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" style="-fx-padding: 10; -fx-background-color: #e0e0e0;">
+            <Label fx:id="footerLabel" text="Autor: Klaudia Lota 272576"
+                   style="-fx-text-fill: #546e7a; -fx-font-style: italic;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

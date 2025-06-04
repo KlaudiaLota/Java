@@ -1,0 +1,13 @@
+.fancy-button {
+    -fx-background-color: linear-gradient(to right, #42a5f5, #1e88e5);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 8 16;
+    -fx-effect: dropshadow(gaussian, #90caf9, 4, 0.2, 0, 2);
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+.fancy-button:hover {
+    -fx-background-color: linear-gradient(to right, #64b5f6, #2196f3);
+}

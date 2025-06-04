@@ -1,0 +1,63 @@
+[2025-06-04 18:23:10] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:24:05] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:27:39] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:28:54] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:29:53] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:30:08] [INFO] Operacja: Wczytano obraz: rynek_frag.jpg, Czas: 88 ms
+[2025-06-04 18:30:20] [INFO] Operacja: Obrócono obraz w lewo, Czas: 136 ms
+[2025-06-04 18:30:23] [INFO] Operacja: Obrócono obraz w prawo, Czas: 112 ms
+[2025-06-04 18:30:31] [INFO] Operacja: Progowanie, Czas: 380 ms
+[2025-06-04 18:30:40] [INFO] Operacja: Konturowanie, Czas: 375 ms
+[2025-06-04 18:31:03] [INFO] Operacja: Wczytano obraz: rynek_frag.jpg, Czas: 52 ms
+[2025-06-04 18:31:05] [INFO] Operacja: Konturowanie, Czas: 342 ms
+[2025-06-04 18:31:18] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 18:34:56] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:35:00] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 18:37:56] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:38:02] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 18:44:16] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:44:23] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 18:48:34] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:48:39] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 18:49:23] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:49:24] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:49:27] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 18:51:47] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:51:56] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 18:52:21] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 18:53:02] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:10:13] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:14:57] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:17:25] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:17:38] [INFO] Operacja: Wczytano obraz: rynek_frag.jpg, Czas: 61 ms
+[2025-06-04 19:17:45] [INFO] Operacja: Konturowanie, Czas: 365 ms
+[2025-06-04 19:17:55] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:18:36] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:27:28] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:27:39] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:27:52] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:28:03] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:28:11] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:28:30] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:28:49] [INFO] Operacja: Wczytano obraz: koteczek.jpg, Czas: 60 ms
+[2025-06-04 19:28:52] [INFO] Operacja: Obrócono obraz w lewo, Czas: 117 ms
+[2025-06-04 19:28:56] [INFO] Operacja: Obrócono obraz w lewo, Czas: 106 ms
+[2025-06-04 19:31:45] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:31:52] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:33:55] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:34:55] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:35:07] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:35:27] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:35:30] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:35:36] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:35:39] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:35:46] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:36:09] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:36:35] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:40:00] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:40:04] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:40:11] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:40:22] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
+[2025-06-04 19:41:39] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:42:07] [INFO] Operacja: Aplikacja uruchomiona, Czas: 0 ms
+[2025-06-04 19:42:22] [INFO] Operacja: Aplikacja zamknięta, Czas: 0 ms
