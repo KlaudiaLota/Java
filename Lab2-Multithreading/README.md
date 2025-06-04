@@ -1,5 +1,3 @@
-## Opis projektu
-
 Celem projektu było wykonanie prostej aplikacji desktopowej napisanej w JavaFX, która pozwala użytkownikowi wczytać plik JPG, wykonać na nim wybrane operacje graficzne, a następnie zapisać wynik. Wszystkie operacje przetwarzania obrazu wykonywane są wielowątkowo, co przyspiesza pracę z większymi plikami.
 
 ## Główne komponenty
