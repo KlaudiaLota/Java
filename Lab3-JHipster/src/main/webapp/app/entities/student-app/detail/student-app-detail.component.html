@@ -1,0 +1,73 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (student(); as studentRef) {
+      <div>
+        <h2 data-cy="studentDetailsHeading"><span jhiTranslate="simpleWebApp.student.detail.title">Student</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ studentRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.student.firstName">First Name</span></dt>
+          <dd>
+            <span>{{ studentRef.firstName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.student.lastName">Last Name</span></dt>
+          <dd>
+            <span>{{ studentRef.lastName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.student.birthDate">Birth Date</span></dt>
+          <dd>
+            <span>{{ studentRef.birthDate | formatMediumDate }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.student.gender">Gender</span></dt>
+          <dd>
+            <span [jhiTranslate]="'simpleWebApp.Gender.' + (studentRef.gender ?? 'null')">{{
+              { null: '', MALE: 'MALE', FEMALE: 'FEMALE', OTHER: 'OTHER' }[studentRef.gender ?? 'null']
+            }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.student.email">Email</span></dt>
+          <dd>
+            <span>{{ studentRef.email }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.student.registrationDate">Registration Date</span></dt>
+          <dd>
+            <span>{{ studentRef.registrationDate | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.student.profile">Profile</span></dt>
+          <dd>
+            @if (student()!.profile) {
+              <div>
+                <a [routerLink]="['/student-profile-app', student()!.profile?.id, 'view']">{{ studentRef.profile?.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.student.course">Course</span></dt>
+          <dd>
+            @for (course of studentRef.courses; track $index; let last = $last) {
+              <span>
+                <a [routerLink]="['/course-app', course.id, 'view']">{{ course?.id }}</a
+                >{{ last ? '' : ', ' }}
+              </span>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/student-app', studentRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

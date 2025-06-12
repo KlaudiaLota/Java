@@ -1,0 +1,66 @@
+/**
+ * Model bazy danych do systemu zarządzania kursami online.
+ */
+
+enum CourseLevel {
+    BEGINNER, INTERMEDIATE, ADVANCED
+}
+
+enum Gender {
+    MALE, FEMALE, OTHER
+}
+
+entity Instructor {
+    firstName String
+    lastName String
+    email String
+    bio String
+    hireDate Instant
+    rating Float
+}
+
+entity Course {
+    title String required
+    description String
+    startDate LocalDate
+    endDate LocalDate
+    level CourseLevel
+    price Float
+}
+
+entity Student {
+    firstName String
+    lastName String
+    birthDate LocalDate
+    gender Gender
+    email String
+    registrationDate Instant
+}
+
+entity StudentProfile {
+    bio String
+    linkedinUrl String
+    githubUrl String
+    profilePictureUrl String
+}
+
+// Relacje
+relationship OneToMany {
+    Instructor to Course{instructor}
+}
+
+relationship ManyToMany {
+    Course{student(firstName)} to Student{course}
+}
+
+relationship OneToOne {
+    Student{profile} to StudentProfile
+}
+
+// Paginacja
+paginate Course, Instructor, Student, StudentProfile with pagination
+
+// DTO i serwisy
+dto * with mapstruct
+service all with serviceImpl
+angularSuffix * with App

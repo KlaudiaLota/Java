@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-student-profile-app-heading"
+        data-cy="StudentProfileCreateUpdateHeading"
+        jhiTranslate="simpleWebApp.studentProfile.home.createOrEditLabel"
+      >
+        Create or edit a Student Profile
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simpleWebApp.studentProfile.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_bio" jhiTranslate="simpleWebApp.studentProfile.bio">Bio</label>
+          <input type="text" class="form-control" name="bio" id="field_bio" data-cy="bio" formControlName="bio" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_linkedinUrl" jhiTranslate="simpleWebApp.studentProfile.linkedinUrl">Linkedin Url</label>
+          <input
+            type="text"
+            class="form-control"
+            name="linkedinUrl"
+            id="field_linkedinUrl"
+            data-cy="linkedinUrl"
+            formControlName="linkedinUrl"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_githubUrl" jhiTranslate="simpleWebApp.studentProfile.githubUrl">Github Url</label>
+          <input type="text" class="form-control" name="githubUrl" id="field_githubUrl" data-cy="githubUrl" formControlName="githubUrl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_profilePictureUrl" jhiTranslate="simpleWebApp.studentProfile.profilePictureUrl"
+            >Profile Picture Url</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="profilePictureUrl"
+            id="field_profilePictureUrl"
+            data-cy="profilePictureUrl"
+            formControlName="profilePictureUrl"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

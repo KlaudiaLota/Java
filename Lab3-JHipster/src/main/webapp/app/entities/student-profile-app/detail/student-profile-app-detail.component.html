@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (studentProfile(); as studentProfileRef) {
+      <div>
+        <h2 data-cy="studentProfileDetailsHeading"><span jhiTranslate="simpleWebApp.studentProfile.detail.title">Student Profile</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ studentProfileRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.studentProfile.bio">Bio</span></dt>
+          <dd>
+            <span>{{ studentProfileRef.bio }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.studentProfile.linkedinUrl">Linkedin Url</span></dt>
+          <dd>
+            <span>{{ studentProfileRef.linkedinUrl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.studentProfile.githubUrl">Github Url</span></dt>
+          <dd>
+            <span>{{ studentProfileRef.githubUrl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simpleWebApp.studentProfile.profilePictureUrl">Profile Picture Url</span></dt>
+          <dd>
+            <span>{{ studentProfileRef.profilePictureUrl }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/student-profile-app', studentProfileRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

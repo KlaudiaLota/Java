@@ -1,0 +1,135 @@
+<div>
+  <h2 id="page-heading" data-cy="StudentProfileHeading">
+    <span jhiTranslate="simpleWebApp.studentProfile.home.title">Student Profiles</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simpleWebApp.studentProfile.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-student-profile-app"
+        [routerLink]="['/student-profile-app/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simpleWebApp.studentProfile.home.createLabel">Create a new Student Profile</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (studentProfiles().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simpleWebApp.studentProfile.home.notFound">No Student Profiles found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="bio">
+              <div class="d-flex">
+                <span jhiTranslate="simpleWebApp.studentProfile.bio">Bio</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="linkedinUrl">
+              <div class="d-flex">
+                <span jhiTranslate="simpleWebApp.studentProfile.linkedinUrl">Linkedin Url</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="githubUrl">
+              <div class="d-flex">
+                <span jhiTranslate="simpleWebApp.studentProfile.githubUrl">Github Url</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="profilePictureUrl">
+              <div class="d-flex">
+                <span jhiTranslate="simpleWebApp.studentProfile.profilePictureUrl">Profile Picture Url</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (studentProfile of studentProfiles(); track trackId(studentProfile)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/student-profile-app', studentProfile.id, 'view']">{{ studentProfile.id }}</a>
+              </td>
+              <td>{{ studentProfile.bio }}</td>
+              <td>{{ studentProfile.linkedinUrl }}</td>
+              <td>{{ studentProfile.githubUrl }}</td>
+              <td>{{ studentProfile.profilePictureUrl }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/student-profile-app', studentProfile.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/student-profile-app', studentProfile.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(studentProfile)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+  @if (studentProfiles().length > 0) {
+    <div>
+      <div class="d-flex justify-content-center">
+        <jhi-item-count [params]="{ page, totalItems, itemsPerPage }" />
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [page]="page"
+          [pageSize]="itemsPerPage"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="navigateToPage($event)"
+        ></ngb-pagination>
+      </div>
+    </div>
+  }
+</div>
